@@ -1,0 +1,12 @@
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "linkedin": "https://linkedin.com/in/testuser",
+  "github": "https://github.com/testuser",
+  "website": "https://testuser.com",
+  "cv_text": "John Doe Senior Python Developer EXPERIENCE:- 5 years building web applications with Django and FastAPI- Expert in Python, PostgreSQL, Docker, AWS- Built production AI agents using LangChain and GPT-4SKILLS:Python, JavaScript, React, Docker, PostgreSQL, AWS, LangChain, OpenAI API EDUCATION: B.S. Computer Science, 2018",
+  "cover_letter_template": "Dear Hiring Manager, I am excited to apply for the [ROLE] position at [COMPANY]. With 5 years of experience in Python development and a proven track record of building scalable applications, I believe I would be a strong fit for your team. [CUSTOM_CONTENT] I look forward to discussing how my skills align with your needs. Best regards, John Doe",
+  "target_roles": ["Python Developer", "AI Engineer", "Backend Engineer"],
+  "min_salary": 120000,
+  "min_match_score": 70.0
+}

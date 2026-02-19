@@ -1,0 +1,41 @@
+# .gitignore
+
+# ==================== ENVIRONMENT ====================
+.env
+venv/
+.venv/
+
+# ==================== PYTHON ====================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ==================== DATA ====================
+# User data is sensitive - never commit
+data/user/cv.txt
+data/user/cover_letter.txt
+data/user/config.json
+
+# Application data (can contain personal info)
+data/jobs.json
+data/applications.json
+
+# Screenshots from browser automation
+data/screenshots/
+
+# ==================== IDE ====================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ==================== MISC ====================
+*.log
+.pytest_cache/
+.mypy_cache/
