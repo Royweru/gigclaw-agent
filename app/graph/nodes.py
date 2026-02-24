@@ -138,11 +138,9 @@ def apply_to_job(state: AgentState) -> Dict[str, Any]:
         if job.status == ApplicationStatus.MATCHED:
             print(f"   Applying to: {job.title} ({job.url})")
 
-            # FIXME: In a real scenario, we need the CV path.
-            cv_path = "data/cv.pdf"
+            cv_path = "data/user/cv.txt"
 
             try:
-                # DRAFT MODE IS DEFAULT (Safety First!)
                 form_filler_instance.fill(
                     job.url, profile, cv_path, draft_mode=True)
 
