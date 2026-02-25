@@ -114,7 +114,6 @@ def tailor_application(state:AgentState) ->Dict[str,Any] :
     return {"jobs":updated_jobs}
 
 
-
 def apply_to_job(state: AgentState) -> Dict[str, Any]:
     """
     Node 4: The Hand
@@ -164,6 +163,7 @@ def apply_to_job(state: AgentState) -> Dict[str, Any]:
         "jobs_applied_count": state.jobs_applied_count + jobs_applied,
         "applications": state.applications + apps_log
     }
+
 def generate_report(state: AgentState) -> Dict[str, Any]:
     """
     Node 5: The Mouth
@@ -172,7 +172,7 @@ def generate_report(state: AgentState) -> Dict[str, Any]:
     print("\nNODE: Generate Report")
 
     # Stats
-    total_found = state.jobs_scrapped_count
+    total_found = state.jobs_scraped_count
     total_applied = state.jobs_applied_count
 
     import datetime
@@ -232,5 +232,5 @@ def generate_report(state: AgentState) -> Dict[str, Any]:
     print(f"   Report saved to: {report_path}")
     print(f"   Summary: Found {total_found}, Applied {total_applied}")
 
-    return {}
-
+    # Node transition + final summary to Telegram
+    

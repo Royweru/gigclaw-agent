@@ -71,3 +71,46 @@ class MatchResult(BaseModel) :
     reasoning:str =Field(..., description="why was this score given")
     key_requirements:List[str]
     missing_skills:List[str]
+    
+class TailoredContent(BaseModel):
+    """Structured output for content generation"""
+    tailored_cv: str
+    cover_letter: str
+    why_good_fit: List[str]
+
+# ==================== AGENT STATE & RECORDS ====================
+
+
+class TailoredMaterials(BaseModel):
+    """The custom content generated for a specific job"""
+    job_id: str
+    tailored_cv: str
+    tailored_cover_letter: str
+
+
+class ApplicationRecord(BaseModel):
+    """The final log of an application attempt"""
+    id: str
+    job_id: str
+    status: ApplicationStatus
+    applied_at: datetime = Field(default_factory=datetime.now)
+    error_message: Optional[str] = None
+    notes: Optional[str] = None
+
+
+class AgentState(BaseModel):
+    """
+    The global state of our agent workflow.
+    Simple. Typed. Effective.
+    """
+    user_profile: UserProfile
+
+    # The list of all jobs (Inventory)
+    jobs: List[Job] = Field(default_factory=list)
+
+    # Counters / Stats for Dashboard
+    jobs_scraped_count: int = 0
+    jobs_applied_count: int = 0
+
+    # Application Logs (Section 7)
+    applications: List[ApplicationRecord] = Field(default_factory=list)
